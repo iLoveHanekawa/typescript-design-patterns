@@ -1,11 +1,11 @@
 // page 101
 
-class Maze {}
+import { Maze } from "../Maze.js";
 
-abstract class MazeBuilder {
-    public abstract BuildMaze(): void
-    public abstract BuildRoom(room: number): void
-    public abstract BuildDoor(roomFrom: number, roomTo: number): void
-    public GetMaze(): Maze { return 0; }
+export abstract class MazeBuilder {
+    BuildMaze(): void {}
+    BuildRoom(room: number): void {}
+    BuildDoor(roomFrom: number, roomTo: number): void {}
+    public GetMaze(): Maze { return new Maze() }
     protected constructor() {}
 }
