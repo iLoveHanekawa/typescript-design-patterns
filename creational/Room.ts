@@ -8,7 +8,7 @@ export class Room implements MapSite {
 
     constructor(roomNo: number) {
         this._roomNumber = roomNo;
-        this._sides = [];
+        this._sides = [null, null, null, null];
     }
     
     GetSide(direction: Direction): MapSite {
@@ -16,9 +16,13 @@ export class Room implements MapSite {
         return new Room(direction);
     }
 
+    SetSide(direction: Direction, mapSite: MapSite) {
+        this._sides[direction] = mapSite;
+    }
+
     Enter(): void {}
 
-    private _sides: number[];
+    private _sides: (MapSite | null)[];
 
     
 }
