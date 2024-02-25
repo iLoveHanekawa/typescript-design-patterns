@@ -1,0 +1,19 @@
+{
+  "name": "typescript-design-patterns",
+  "version": "1.0.0",
+  "description": "GOF design patterns translated to TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iLoveHanekawa/typescript-design-patterns.git"
+  },
+  "author": "iLoveHanekawa",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/iLoveHanekawa/typescript-design-patterns/issues"
+  },
+  "homepage": "https://github.com/iLoveHanekawa/typescript-design-patterns#readme"
+}
