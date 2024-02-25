@@ -1,3 +1,3 @@
-export enum Direction { North, South, East, West }
+// page 82
 
-const x: Direction = Direction.East;
+export enum Direction { North, South, East, West }
