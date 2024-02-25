@@ -7,6 +7,8 @@ import { Wall } from "../Wall.js";
 
 export class MazeFactory {
 
+    constructor() {}
+
     MakeMaze(): Maze {
         return new Maze();
     }
