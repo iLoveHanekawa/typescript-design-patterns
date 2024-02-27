@@ -4,9 +4,9 @@ import { Door } from "../Door.js";
 import { Room } from "../Room.js";
 import { MazeFactory } from "./MazeFactory.js";
 
-class Spell {}
+export class Spell {}
 
-class EnchantedRoom extends Room {
+export class EnchantedRoom extends Room {
     protected _spell: Spell;
     constructor(roomNumber: number, spell: Spell) {
         super(roomNumber);
@@ -14,7 +14,7 @@ class EnchantedRoom extends Room {
     }
 }
 
-class DoorNeedingSpell extends Door {
+export class DoorNeedingSpell extends Door {
     constructor(room1: Room, room2: Room) {
         super(room1, room2);
     }

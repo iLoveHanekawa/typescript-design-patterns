@@ -4,13 +4,13 @@ import { Room } from "../Room.js";
 import { Wall } from "../Wall.js";
 import { MazeFactory } from "./MazeFactory.js";
 
-class RoomWithABomb extends Room {
+export class RoomWithABomb extends Room {
     constructor(roomNumber: number) {
         super(roomNumber);
     }
 }
 
-class BombedWall extends Wall {
+export class BombedWall extends Wall {
     constructor() {
         super()
     }
