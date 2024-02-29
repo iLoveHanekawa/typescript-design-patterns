@@ -3,12 +3,12 @@
 import { Direction } from "../Direction.js";
 import { MazeGame } from "../MazeGame.js";
 
-abstract class MapSite {
+export abstract class MapSite {
     public abstract Enter(): void;
     public abstract Clone(): MapSite;
 }
 
-class Wall extends MapSite {
+export class Wall extends MapSite {
 
     constructor() {
         super()
@@ -20,7 +20,7 @@ class Wall extends MapSite {
     override Enter(): void {}
 }
 
-class Room extends MapSite {
+export class Room extends MapSite {
     private _roomNumber!: number;
 
     constructor() {
@@ -49,7 +49,7 @@ class Room extends MapSite {
     private _sides: (MapSite | null)[];
 }
 
-class Maze extends MapSite {
+export class Maze extends MapSite {
     constructor() {
         super();
     }
@@ -67,7 +67,7 @@ class Maze extends MapSite {
 }
 
 
-class Door extends MapSite {
+export class Door extends MapSite {
 
     private _room1!: Room;
     private _room2!: Room;
@@ -94,7 +94,7 @@ class Door extends MapSite {
 
 }
 
-class MazeFactory {
+export class MazeFactory {
 
     constructor() {}
 
