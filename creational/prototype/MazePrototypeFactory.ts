@@ -47,12 +47,18 @@ class Room extends MapSite {
     }
 
     private _sides: (MapSite | null)[];
-
-    
 }
 
-class Maze {
-    constructor() {}
+class Maze extends MapSite {
+    constructor() {
+        super();
+    }
+
+    override Enter(): void {}
+
+    override Clone(): Maze {
+        return new Maze();
+    }
 
     AddRoom(room: Room): void {}
     RoomNo(roomNumber: number): Room {
@@ -135,7 +141,7 @@ export class MazePrototypeFactory extends MazeFactory {
     }
 
     override MakeMaze(): Maze {
-        return new Maze();
+        return this._prototypeMaze.Clone();
     }
 
     override MakeRoom(roomNumber: number): Room {
