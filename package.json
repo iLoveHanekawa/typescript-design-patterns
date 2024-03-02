@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/iLoveHanekawa/typescript-design-patterns/issues"
   },
-  "homepage": "https://github.com/iLoveHanekawa/typescript-design-patterns#readme"
+  "homepage": "https://github.com/iLoveHanekawa/typescript-design-patterns#readme",
+  "devDependencies": {
+    "@types/node": "^20.11.24"
+  }
 }
