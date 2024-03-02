@@ -2,6 +2,7 @@
 
 import { Direction } from "../Direction.js";
 import { MazeGame } from "../MazeGame.js";
+import { BombedWall } from "./BombedWall.js";
 
 export abstract class MapSite {
     public abstract Enter(): void;
@@ -155,3 +156,4 @@ export class MazePrototypeFactory extends MazeFactory {
 const game = new MazeGame();
 
 const simpleMazeFactory = new MazePrototypeFactory(new Maze(), new Wall(), new Room(), new Door());
+const bombedMazeFactory = new MazePrototypeFactory(new Maze(), new BombedWall(), new Room(), new Door());
