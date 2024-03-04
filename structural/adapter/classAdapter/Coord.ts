@@ -1,3 +1,5 @@
+// utility for Shape class on page 146
+
 export class Coord {
     value: number = 0;
     constructor(value: number = 0) {

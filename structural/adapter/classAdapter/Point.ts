@@ -1,3 +1,5 @@
+// utility for Shape class on page 146
+
 import { Coord } from "./Coord.js";
 
 export class Point {
