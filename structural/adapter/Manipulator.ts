@@ -1,3 +1,3 @@
-export abstract class Manipulator {
+export class Manipulator {
     constructor() {}
 }

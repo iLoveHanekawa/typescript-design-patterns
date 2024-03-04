@@ -3,8 +3,9 @@ import { Shape } from "./Shape.js";
 import { Point } from "./Point.js";
 import { Coord } from "./Coord.js";
 import { Manipulator } from "./Manipulator.js";
+import { TextManipulator } from "./TextManipulator.js";
 
-class TextShape extends TextView implements Shape {
+export class TextShape extends TextView implements Shape {
 
     BoundingBox(bottomLeft: Point, topRight: Point): void {
         const bottom = new Coord();
@@ -21,7 +22,7 @@ class TextShape extends TextView implements Shape {
         return super.IsEmpty();        
     }
 
-    CreateManipulator(): import("./Manipulator.js").Manipulator {
-        
+    CreateManipulator(): Manipulator {
+        return new TextManipulator(this);
     }
 }
