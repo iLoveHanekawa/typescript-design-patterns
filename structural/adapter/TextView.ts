@@ -1,13 +1,13 @@
 import type { Coord } from "./Coord.js";
 
 export interface TextView {
-    GetOrigin(): void;
+    GetOrigin(x: Coord, y: Coord): void;
     GetExtent(width: Coord, height: Coord): void;
     IsEmpty(): boolean;
 }
 
 export class TextView implements TextView {
     GetExtent(width: Coord, height: Coord): void {}
-    GetOrigin(): void {}
+    GetOrigin(x: Coord, y: Coord): void {}
     IsEmpty(): boolean { return false; }
 }
