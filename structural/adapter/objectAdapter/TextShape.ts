@@ -1,8 +1,10 @@
+// page 148
+
 import { Coord } from "../classAdapter/Coord.js";
 import type { Manipulator } from "../classAdapter/Manipulator.js";
 import { Point } from "../classAdapter/Point.js";
 import { type Shape } from "../classAdapter/Shape.js";
-import { TextManipulator } from "../classAdapter/TextManipulator.js";
+import { TextManipulator } from "./TextManipulator.js";
 import type { TextView } from "../classAdapter/TextView.js";
 
 export class TextShape implements Shape {
