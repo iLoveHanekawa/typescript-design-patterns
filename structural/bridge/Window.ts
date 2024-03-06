@@ -1,7 +1,6 @@
-abstract class View {
-    constructor() {}
-}
+import { View } from "./View.js";
 
 export abstract class Window {
-    abstract 
+    constructor(contents: View) {}
+    private GetView(): View { return new View(); }
 }
