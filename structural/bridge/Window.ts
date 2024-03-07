@@ -1,5 +1,6 @@
 // page 156
 
+import { Coord } from "../adapter/classAdapter/Coord.js";
 import type { Point } from "../adapter/classAdapter/Point.js";
 import { View } from "./View.js";
 import { WindowImp } from "./WindowImp.js";
@@ -30,7 +31,10 @@ export abstract class Window {
     abstract Lower(): void;
 
     abstract DrawLine(x: Point, y: Point): void;
-    abstract DrawRect(x: Point, y: Point): void;
+    DrawRect(x: Point, y: Point): void {
+        const imp: WindowImp = this.GetWindowImp();
+        imp.DeviceRect(new Coord(x.x), new Coord(x.y), new Coord(y.x), new Coord(y.y));
+    }
     abstract DrawPolygon(points: Point[], n: number): void;
     abstract DrawText(char: string, x: Point): void;
 }
