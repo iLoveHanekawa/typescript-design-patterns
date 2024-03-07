@@ -1,4 +1,6 @@
+import { PMWindowSystemFactory } from "./PMWindowSystemFactory.js";
 import { WindowImp } from "./WindowImp.js";
+import { XWindowSystemFactory } from "./XWindowSystemFactory.js";
 
 export abstract class WindowSystemFactory {
 
@@ -14,7 +16,5 @@ export abstract class WindowSystemFactory {
         return this._instance;
     }
 
-    MakeWindowImp(): WindowImp {
-        return new WindowImp();
-    }
+    abstract MakeWindowImp(): WindowImp;
 }
