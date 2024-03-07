@@ -4,6 +4,7 @@ import { Coord } from "../adapter/classAdapter/Coord.js";
 import type { Point } from "../adapter/classAdapter/Point.js";
 import { View } from "./View.js";
 import { WindowImp } from "./WindowImp.js";
+import { WindowSystemFactory } from "./WindowSystemFactory.js";
 
 export abstract class Window {
 
@@ -15,7 +16,12 @@ export abstract class Window {
     private _imp: WindowImp | null = null;
     
     protected GetView(): View { return this._contents; }
-    protected GetWindowImp(): WindowImp | null { return this._imp; }
+    protected GetWindowImp(): WindowImp | null {  
+        if(this._imp == null) {
+            this._imp = WindowSystemFactory.Instance().MakeWindowImp();
+        }
+        return this._imp;
+    }
     
     // requests handled by window
     abstract DrawContents(): void;
