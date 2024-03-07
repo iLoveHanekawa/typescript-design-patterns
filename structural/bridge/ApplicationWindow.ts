@@ -17,7 +17,9 @@ export class ApplicationWindow extends Window {
     override SetOrigin(): void {}
     override Raise(): void {}
     override Lower(): void {}
-    override DrawContents(): void {}
+    override DrawContents(): void {
+        this.GetView().DrawOn(this);
+    }
     override DrawLine(): void {}
     override DrawPolygon(): void {}
     override DrawRect(): void {}
