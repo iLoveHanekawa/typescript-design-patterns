@@ -21,7 +21,7 @@ export class IconWindow extends Window {
     override Raise(): void {}
     override Lower(): void {}
     override DrawContents(): void {
-        const imp: WindowImp = this.GetWindowImp();
+        const imp = this.GetWindowImp();
         if(imp){
             imp.DeviceBitmap(this._bitmapName, new Coord(0.0), new Coord(0.0));
         }

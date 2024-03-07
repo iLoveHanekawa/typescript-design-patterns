@@ -15,7 +15,7 @@ export abstract class Window {
     private _imp: WindowImp | null = null;
     
     protected GetView(): View { return this._contents; }
-    protected GetWindowImp(): WindowImp { return this._imp; }
+    protected GetWindowImp(): WindowImp | null { return this._imp; }
     
     // requests handled by window
     abstract DrawContents(): void;
@@ -32,8 +32,10 @@ export abstract class Window {
 
     abstract DrawLine(x: Point, y: Point): void;
     DrawRect(x: Point, y: Point): void {
-        const imp: WindowImp = this.GetWindowImp();
-        imp.DeviceRect(new Coord(x.x), new Coord(x.y), new Coord(y.x), new Coord(y.y));
+        const imp = this.GetWindowImp();
+        if(imp) {
+            imp.DeviceRect(new Coord(x.x), new Coord(x.y), new Coord(y.x), new Coord(y.y));
+        }
     }
     abstract DrawPolygon(points: Point[], n: number): void;
     abstract DrawText(char: string, x: Point): void;
