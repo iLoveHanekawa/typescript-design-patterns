@@ -1,22 +1,22 @@
 // page 170
 
-import type { Currency } from "./Currency.js";
+import { Currency } from "./Currency.js";
 import { Iterator } from "./Iterator.js";
-import type { Watt } from "./Watt.js";
+import { Watt } from "./Watt.js";
 
-export abstract class Equipment {
+export class Equipment {
 
     Name(): string { return this._name; }
 
-    abstract Power(): Watt;
-    abstract NetPrice(): Currency;
-    abstract DiscountPrice(): Currency;
+    Power(): Watt { return new Watt(); }
+    NetPrice(): Currency { return new Currency(); }
+    DiscountPrice(): Currency { return new Currency(); }
 
-    abstract Add(e: Equipment): void;
-    abstract Remove(e: Equipment): void;
+    Add(e: Equipment): void {}
+    Remove(e: Equipment): void {}
 
     protected constructor(n: string) {}
     private _name: string = '';
 
-    abstract CreateIterator: Iterator<Equipment, [n: string]>;
+    CreateIterator(): Iterator<Equipment, [n: string]> | null { return null; }
 }
