@@ -9,8 +9,5 @@ export class Iterator<Type extends Equipment, Args extends any[]> {
     constructor(TCtor: { new(...args: Args): Type }) {
         this._TCtor = TCtor
     }
-
-    CreateIterator(...args: Args) {
-        return new this._TCtor(...args);
-    }
+    
 }
