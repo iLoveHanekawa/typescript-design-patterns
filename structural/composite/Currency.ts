@@ -5,10 +5,10 @@ export class Currency {
     constructor(val: number = 0) {
         this._value = val;
     }
-    get GetValue(): number {
+    GetValue(): number {
         return this._value;
     }
-    set SetValue(n: number) {
+    SetValue(n: number) {
         this._value = n;
     }
 }
