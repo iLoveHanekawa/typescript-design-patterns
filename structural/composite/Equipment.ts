@@ -1,6 +1,13 @@
 // page 170
 
-export class Equipment {
-    private _name: string;
+import type { Watt } from "./Watt.js";
+
+export abstract class Equipment {
+
+    Name(): string { return this._name; }
+
+    abstract Power(): Watt;
+
     protected constructor(n: string) {}
+    private _name: string = '';
 }
