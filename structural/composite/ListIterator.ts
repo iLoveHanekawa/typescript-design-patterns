@@ -5,7 +5,7 @@ import type { Equipment } from "./Equipment.js";
 import { Iterator } from "./Iterator.js";
 
 export class ListIterator<Type extends Equipment> extends Iterator<Type> {
-    constructor(collection: Array<Equipment>) {
+    constructor(collection: Array<Type>) {
         super(collection)
     }
     
@@ -21,7 +21,7 @@ export class ListIterator<Type extends Equipment> extends Iterator<Type> {
         return this._index >= this._collection.length;
     }
 
-    CurrentItem(): Equipment {
+    CurrentItem(): Type {
         return this._collection[this._index]
     }
 }

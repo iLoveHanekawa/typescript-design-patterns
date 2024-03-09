@@ -4,14 +4,14 @@ import type { Equipment } from "./Equipment.js";
 
 export class Iterator<Type extends Equipment> {
     // constructor for the argument Type
-    constructor(collection: Array<Equipment> = []) {
+    constructor(collection: Array<Type> = []) {
         this._index = 0;
         this._collection = collection;
     }
 
     
     protected _index: number;
-    protected _collection: Array<Equipment>;
+    protected _collection: Array<Type>;
     
     First(): void {
         this._index = 0;
@@ -25,7 +25,7 @@ export class Iterator<Type extends Equipment> {
         return this._index >= this._collection.length;
     }
 
-    CurrentItem(): Equipment {
+    CurrentItem(): Type {
         return this._collection[this._index]
     }
 }
