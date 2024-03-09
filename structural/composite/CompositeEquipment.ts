@@ -22,7 +22,9 @@ export class CompositeEquipment extends Equipment {
     }
     override DiscountPrice(): Currency { return new Currency(); }
 
-    override Add(e: Equipment): void {}
+    override Add(e: Equipment): void {
+        this._equipment.push(e);
+    }
     override Remove(e: Equipment): void {}
     override CreateIterator(): Iterator<Equipment> {
         return new ListIterator(this._equipment);
