@@ -4,7 +4,7 @@ import type { Equipment } from "./Equipment.js";
 import { Iterator } from "./Iterator.js";
 
 export class ListIterator<Type extends Equipment, Args extends any[]> extends Iterator<Type, Args> {
-    constructor(TCtor: new (...args: Args) => Type) {
-        super(TCtor)
+    constructor(tCtor: new (...args: Args) => Type) {
+        super(tCtor)
     }
 }
