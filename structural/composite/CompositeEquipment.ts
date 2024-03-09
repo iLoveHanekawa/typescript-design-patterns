@@ -24,8 +24,8 @@ export class CompositeEquipment extends Equipment {
 
     override Add(e: Equipment): void {}
     override Remove(e: Equipment): void {}
-    override CreateIterator(): Iterator<Equipment, [n: string | undefined]> | null {
-        return new ListIterator(CompositeEquipment);
+    override CreateIterator(): ListIterator<Equipment> {
+        return new ListIterator(this._equipment);
     }
 
     private _equipment: Array<Equipment> = [];

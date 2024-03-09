@@ -2,18 +2,17 @@
 
 import type { Equipment } from "./Equipment.js";
 
-export class Iterator<Type extends Equipment, Args extends any[]> {
+export class Iterator<Type extends Equipment> {
     // constructor for the argument Type
-    private _collection: Type[];
-    private _tCtor: { new(...args: Args): Type };
-    private _index: number;
-
-    constructor(tCtor: { new(...args: Args): Type }) {
-        this._tCtor = tCtor
-        this._collection = [];
+    constructor(collection: Array<Equipment> = []) {
         this._index = 0;
+        this._collection = collection;
     }
 
+    
+    protected _index: number;
+    protected _collection: Array<Equipment>;
+    
     First(): void {
         this._index = 0;
     }
@@ -26,7 +25,7 @@ export class Iterator<Type extends Equipment, Args extends any[]> {
         return this._index >= this._collection.length;
     }
 
-    CurrentItem(): Type {
+    CurrentItem(): Equipment {
         return this._collection[this._index]
     }
 }

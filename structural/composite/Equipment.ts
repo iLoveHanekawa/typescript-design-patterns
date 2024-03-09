@@ -18,5 +18,5 @@ export class Equipment {
     protected constructor(n: string = '') {}
     private _name: string = '';
 
-    CreateIterator(): Iterator<Equipment, [n: string | undefined]> | null { return null; }
+    CreateIterator(): Iterator<Equipment> { return new Iterator(); }
 }
