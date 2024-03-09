@@ -13,12 +13,12 @@ export class CompositeEquipment extends Equipment {
 
     override Power(): Watt { return new Watt(); }
     override NetPrice(): Currency {
-        const i = this.CreateIterator();
+        const i = this.CreateIterator()!;
         const total: Currency = new Currency(0);
         for(i?.First(); !i?.IsDone(); i?.Next()) {
-            
+            total.SetValue(total.GetValue() + i?.CurrentItem().NetPrice().GetValue());
         }
-        
+        return total;
     }
     override DiscountPrice(): Currency { return new Currency(); }
 
